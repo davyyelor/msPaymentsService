@@ -16,7 +16,7 @@ metadata:
     
 
   links:  
-    - url: https://github.com/davyyelor/ms-payments-service
+    - url: https://github.com/davyyelor/msPaymentsService/
       title: Repositorio GitHub
       icon: github
 
@@ -81,4 +81,5 @@ spec:
   system: sistema-ticketing
   definition:
     $text: ./api.yaml
+
 
