@@ -10,19 +10,12 @@ metadata:
   annotations:
     github.com/project-slug: davyyelor/ms-payments-service
     backstage.io/techdocs-ref: dir:.
-spec:
-  type: service
-  lifecycle: production
-  system: sistema-ticketing
-  owner: group:team-ticketing
-  providesApis:
-    - ms-payments-service-api
 
-  links:
+  links:   # ✅ AHORA SÍ ESTÁ EN EL SITIO CORRECTO
     - url: https://github.com/davyyelor/ms-payments-service
       title: Repositorio GitHub
       icon: github
-      
+
     - url: https://ci.demo.dev/jenkins/job/ms-payments-service
       title: Pipeline CI/CD (Jenkins)
       icon: build
@@ -58,6 +51,14 @@ spec:
     - url: https://alerts.demo.dev/payments
       title: Alertas y SLOs
       icon: warning
+
+spec:
+  type: service
+  lifecycle: production
+  system: sistema-ticketing
+  owner: group:team-ticketing
+  providesApis:
+    - ms-payments-service-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -76,4 +77,3 @@ spec:
   system: sistema-ticketing
   definition:
     $text: ./api.yaml
-
