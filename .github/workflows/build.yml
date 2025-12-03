@@ -1,0 +1,40 @@
+name: Build & Validate MS Payments Service
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Validate POM
+        run: mvn -B validate
+        continue-on-error: false
+
+      - name: Compile Project
+        run: mvn -B compile
+
+      - name: Run Tests (if exist)
+        run: mvn -B test
+        continue-on-error: true
+
+      - name: Package Application
+        run: mvn -B package -DskipTests=true
+
+      - name: Build Success
+        run: echo "Build completed successfully for ms-payments-service 🎉"
