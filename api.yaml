@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: Payments Service API
+  version: 1.0.0
+  description: API para pagos, confirmaciones y reembolsos.
+
+paths:
+  /payments/checkout:
+    post:
+      summary: Iniciar un proceso de pago
+      responses:
+        "200": { description: Proceso iniciado }
+
+  /payments/confirm:
+    post:
+      summary: Confirmar un pago
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [transactionId]
+              properties:
+                transactionId: { type: string }
+      responses:
+        "200": { description: Pago confirmado }
+
+  /payments/{transactionId}:
+    get:
+      summary: Consultar estado de un pago
+      parameters:
+        - in: path
+          name: transactionId
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: Información del pago }
+
+  /payments/refund:
+    post:
+      summary: Solicitar un reembolso
+      responses:
+        "200": { description: Reembolso procesado }
