@@ -1,19 +1,42 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: msPaymentsService
-  description: "Servicio generado con el template Spring Boot Clean Architecture"
+  name: ms-payments-service
+  description: Servicio de procesamiento de pagos y reembolsos.
   tags:
     - java
     - springboot
-    - clean-architecture
+    - payments
+  annotations:
+    github.com/project-slug: davyyelor/ms-payments-service
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   lifecycle: production
-  owner: user:davidelorzag
+  system: sistema-ticketing
+  owner: group:team-ticketing
+  providesApis:
+    - ms-payments-service-api
 
-  # URL del repositorio generado automáticamente
   links:
-    - url: https://github.com/davyyelor/msPaymentsService
+    - url: https://github.com/davyyelor/ms-payments-service
       title: Repositorio GitHub
       icon: github
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ms-payments-service-api
+  description: API REST para pagos, confirmaciones y reembolsos.
+  tags:
+    - openapi
+    - payments
+  annotations:
+    backstage.io/openapi-ref: ./api.yaml
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:team-ticketing
+  system: sistema-ticketing
+  definition:
+    $text: ./api.yaml
