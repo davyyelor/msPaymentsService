@@ -59,8 +59,8 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  system: sistema-ticketing
-  owner: group:team-ticketing
+  system: openshift
+  owner: group:infrastructure
   providesApis:
     - ms-payments-service-api
 ---
@@ -77,9 +77,10 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
-  owner: group:team-ticketing
-  system: sistema-ticketing
+  owner: group:infrastructure
+  system: openshift
   definition:
     $text: ./api.yaml
+
 
 
