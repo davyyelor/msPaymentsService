@@ -11,7 +11,7 @@ metadata:
     github.com/project-slug: davyyelor/ms-payments-service
     backstage.io/techdocs-ref: dir:.
 
-  links:   # ✅ AHORA SÍ ESTÁ EN EL SITIO CORRECTO
+  links:  
     - url: https://github.com/davyyelor/ms-payments-service
       title: Repositorio GitHub
       icon: github
@@ -77,3 +77,4 @@ spec:
   system: sistema-ticketing
   definition:
     $text: ./api.yaml
+
