@@ -22,6 +22,42 @@ spec:
     - url: https://github.com/davyyelor/ms-payments-service
       title: Repositorio GitHub
       icon: github
+      
+    - url: https://ci.demo.dev/jenkins/job/ms-payments-service
+      title: Pipeline CI/CD (Jenkins)
+      icon: build
+
+    - url: https://sonarqube.demo.dev/dashboard?id=ms-payments-service
+      title: Calidad de código (SonarQube)
+      icon: check
+
+    - url: https://grafana.demo.dev/d/payments-dashboard
+      title: Métricas en Grafana
+      icon: dashboard
+
+    - url: https://kibana.demo.dev/app/discover#/payments-logs
+      title: Logs del servicio (Kibana)
+      icon: web
+
+    - url: https://sentry.demo.dev/projects/ms-payments-service
+      title: Errores y excepciones (Sentry)
+      icon: alert
+
+    - url: https://api.demo.dev/payments/swagger
+      title: Swagger UI
+      icon: api
+
+    - url: https://postman.demo.dev/collections/payments
+      title: Colección Postman
+      icon: code
+
+    - url: https://jaeger.demo.dev/trace/payments
+      title: Trazabilidad distribuida (Jaeger)
+      icon: timeline
+
+    - url: https://alerts.demo.dev/payments
+      title: Alertas y SLOs
+      icon: warning
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -40,3 +76,4 @@ spec:
   system: sistema-ticketing
   definition:
     $text: ./api.yaml
+
