@@ -60,7 +60,10 @@ spec:
   system: websphere
   owner: group:developers
 
-  # ⭐ El servicio usa la base de datos postgres-payments
+  
+  consumesApis:
+    - ms-identity-service-api
+    
   dependsOn:
     - resource:default/postgres
 
@@ -84,4 +87,5 @@ spec:
   system: websphere
   definition:
     $text: ./api.yaml
+
 
