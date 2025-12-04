@@ -11,7 +11,7 @@ metadata:
     github.com/project-slug: davyyelor/ms-payments-service
     backstage.io/techdocs-ref: dir:.
     backstage.io/api-definition: openapi:./api.yaml
-    github.com/workflows: build.yml
+    github.com/workflow-ref: davyyelor/ms-payments-service/.github/workflows/build.yml@main
 
   links:  
     - url: https://github.com/davyyelor/msPaymentsService/
@@ -87,5 +87,6 @@ spec:
   system: websphere
   definition:
     $text: ./api.yaml
+
 
 
