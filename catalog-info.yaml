@@ -13,8 +13,6 @@ metadata:
     backstage.io/api-definition: openapi:./api.yaml
     github.com/workflows: build.yml
 
-    
-
   links:  
     - url: https://github.com/davyyelor/msPaymentsService/
       title: Repositorio GitHub
@@ -61,6 +59,11 @@ spec:
   lifecycle: production
   system: websphere
   owner: group:developers
+
+  # ⭐ El servicio usa la base de datos postgres-payments
+  dependsOn:
+    - resource:default/postgres-payments
+
   providesApis:
     - ms-payments-service-api
 ---
@@ -81,6 +84,3 @@ spec:
   system: websphere
   definition:
     $text: ./api.yaml
-
-
-
