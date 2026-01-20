@@ -57,7 +57,7 @@ spec:
   type: service
   lifecycle: production
   system: websphere
-  owner: group:developers
+  owner: group:sistemas
 
   
   consumesApis:
@@ -82,10 +82,11 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
-  owner: group:developers
+  owner: group:sistemas
   system: websphere
   definition:
     $text: ./api.yaml
+
 
 
 
